@@ -1,0 +1,22 @@
+{% extends "base_html.html" %} {% block content %}
+{% include 'contentcontrol/modal_update.html' %}
+<section class="p-5 bg-dark text-light">
+    <div class="container">
+        <div class="card bg-dark text-light mb-3" >
+            <div class="card-header bg-warning text-black">
+                <h2><i class="bi bi-person-circle"></i></i> - <b>Record:</b> {{record.first_name}} {{record.last_name}}</h2>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Email:</b> {{record.email}}</li>
+                <li class="list-group-item"><b>Address:</b> {{record.address}} {{record.city}}, {{record.state}} {{record.zip}}</li>
+                <li class="list-group-item"><b>Assigned to:</b> {{record.assigned_to}}</li>
+                <li class="list-group-item"><b>Additional Notes:</b><br>{{record.notes}}</li>
+                <li class="list-group-item"><b>Date Added:</b> {{record.date_added}}</li>
+            </ul>
+        </div>
+        <div class="btn-group" role="group" aria-label="Default button group">
+            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#update_input"><i class="bi bi-pencil-square"></i> - Update</button>
+        </div>
+    </div>
+</section>
+{% endblock content %}
